@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+
+  backend:
+    build: ./backend
+    image: us-central1-docker.pkg.dev/neat-pagoda-477804-m8/myrepo/backend-app
+
+  frontend:
+    build: ./frontend
+    image: us-central1-docker.pkg.dev/neat-pagoda-477804-m8/myrepo/frontend-app
