@@ -10,12 +10,6 @@ pipeline {
 
   stages {
 
-    stage('Clone Repo') {
-      steps {
-        git branch: 'main', url: 'YOUR_GITHUB_REPO_URL'
-      }
-    }
-
     stage('GCP Login') {
       steps {
         withCredentials([file(credentialsId: 'gcp-key', variable: 'KEY')]) {
@@ -28,7 +22,7 @@ pipeline {
       }
     }
 
-    stage('Build Using Docker Compose') {
+    stage('Build Images') {
       steps {
         sh 'docker compose build'
       }
